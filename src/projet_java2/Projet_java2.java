@@ -33,37 +33,13 @@ public class Projet_java2 {
         String type_animal= scan_type_animal.nextLine();
         type_animal=type_animal.toUpperCase();
         if ( type_animal.equals("CHAT")){
-            
-             System.out.println("Ton animal est un "+type_animal); 
-             System.out.println("Maintenant tu vas pouvoir personnaliser ton chat!");
-             System.out.println("Comment s'appelle ton chat ? ");
-             Scanner scan_nom_animal= new Scanner(System.in);
-             String nom_animal=scan_nom_animal.nextLine();
-             System.out.println("De quelle couleur est ton chat ? ");
-             Scanner scan_couleur_animal= new Scanner(System.in);
-             String couleur_animal= scan_couleur_animal.nextLine();
-             System.out.println("Où est ton chat ?");
-             Scanner scan_lieu_animal= new Scanner(System.in);
-             String lieu_animal= scan_lieu_animal.nextLine();
-             Animal chat= new Chat(nom_animal,couleur_animal,lieu_animal);
+             Chat ton_chat=new Chat("","","");
+             ton_chat.crier();
 
         }
         if (type_animal.equals ("CHIEN")){
-             System.out.println("Ton animal est un " +type_animal);
-             System.out.println("Maintenant tu vas pouvoir personnaliser ton chien!");
-             System.out.println("Comment s'appelle ton chien ? ");
-             Scanner scan_nom_animal= new Scanner(System.in);
-             String nom_animal=scan_nom_animal.nextLine();
-             System.out.println("De quelle couleur est ton chien ? ");
-             Scanner scan_couleur_animal= new Scanner(System.in);
-             String couleur_animal= scan_couleur_animal.nextLine();
-             System.out.println("Où est ton chien ?");
-             Scanner scan_lieu_animal= new Scanner(System.in);
-             String lieu_animal= scan_lieu_animal.nextLine();
-             Animal chien= new Chien(nom_animal,couleur_animal,lieu_animal);
-      
+             Chien ton_chien=new Chien("","","");
+             ton_chien.crier();
        }
-        
     }
-   
 }

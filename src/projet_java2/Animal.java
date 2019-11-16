@@ -10,13 +10,12 @@ public abstract class Animal
     public String nom;
     public String couleur;
     public String lieu;
-   
+    public boolean est_kidnappe;
+    
     public Animal(String nom, String couleur,String lieu){
         this.nom=nom;
         this.couleur=couleur;
         this.lieu=lieu;
-        onlepresente();
-        sedeplacer();
     }
     public String quelestsonNom(){return this.nom;}
     public String quelestsacouleur(){return this.couleur;}
@@ -24,13 +23,13 @@ public abstract class Animal
     public void tombemalade(){
         System.out.println("Ton animal est malade, attention il faudrait aller voir le veterinaire");
     }
-    public void sedeplacer(){
-        System.out.println("Ton animal se déplace et va vers "+lieu);
+    public void sedeplacer(String nouveau_lieu){
+        System.out.println("Ton animal se déplace et va vers "+nouveau_lieu);
     }
      public void parler(String parle){
-        System.out.println(parle);
+        System.out.println(nom+" : "+parle);
     }
      public void onlepresente(){ 
-            parler( "Ton animal s'appelle " + nom +", il est "+couleur+".");
+           System.out.println( "Ton animal s'appelle " + nom +", il est "+couleur+".");
     }
 }
