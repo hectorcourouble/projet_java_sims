@@ -41,5 +41,6 @@ public class Projet_java2 {
              Chien ton_chien=new Chien("","","");
              ton_chien.crier();
        }
+       Humain voleur = new Voleur("bertrand","RUE","pute");
     }
 }

@@ -10,7 +10,7 @@ public abstract class Animal
     public String nom;
     public String couleur;
     public String lieu;
-    public boolean est_kidnappe;
+    public boolean est_kidnappe=false;
     
     public Animal(String nom, String couleur,String lieu){
         this.nom=nom;
@@ -24,6 +24,7 @@ public abstract class Animal
         System.out.println("Ton animal est malade, attention il faudrait aller voir le veterinaire");
     }
     public void sedeplacer(String nouveau_lieu){
+        this.lieu=nouveau_lieu;
         System.out.println("Ton animal se déplace et va vers "+nouveau_lieu);
     }
      public void parler(String parle){
@@ -31,5 +32,9 @@ public abstract class Animal
     }
      public void onlepresente(){ 
            System.out.println( "Ton animal s'appelle " + nom +", il est "+couleur+".");
+    }
+     
+    public void se_fait_kidnapper(){
+        this.est_kidnappe = true;
     }
 }

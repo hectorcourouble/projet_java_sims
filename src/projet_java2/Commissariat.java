@@ -1,15 +1,15 @@
 package projet_java2;
 /**
- * Décrivez votre classe Maisonsims ici.
+ * Décrivez votre classe Police ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Maisonsims extends Lieu
+public class Commissariat extends Lieu
 {
-    
-    public Maisonsims()
+    public Commmissariat()
     {
+       
     }
 
 }
