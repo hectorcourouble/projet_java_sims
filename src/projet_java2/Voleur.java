@@ -19,5 +19,6 @@ public class Voleur extends Humain implements Mechant
         System.out.println("le voleur a kidnappe votre chien");
         ton_animal.se_fait_kidnapper();
         this.animalvole=true;
+        
     }
 }

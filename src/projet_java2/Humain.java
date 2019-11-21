@@ -23,6 +23,10 @@ public abstract class Humain
     public String Monmetierest(){return this.metier;}
     
     public String quelesttonNom(){return this.nom;}
+    
+    public void sedeplacer(String nouveau_lieu){
+        this.lieu=nouveau_lieu;
+    }
         
     public void parler(String parle){
         System.out.println(nom+" : "+parle);

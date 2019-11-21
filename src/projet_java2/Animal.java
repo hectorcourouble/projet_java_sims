@@ -1,4 +1,7 @@
 package projet_java2;
+
+import java.util.Scanner;
+
 /**
  * Décrivez votre classe abstraite Animal ici.
  *
@@ -11,6 +14,7 @@ public abstract class Animal
     public String couleur;
     public String lieu;
     public boolean est_kidnappe=false;
+    public boolean est_malade=false;
     
     public Animal(String nom, String couleur,String lieu){
         this.nom=nom;
@@ -25,7 +29,7 @@ public abstract class Animal
     }
     public void sedeplacer(String nouveau_lieu){
         this.lieu=nouveau_lieu;
-        System.out.println("Ton animal se déplace et va vers "+nouveau_lieu);
+        System.out.println("Vous allez en balade vers "+nouveau_lieu);
     }
      public void parler(String parle){
         System.out.println(nom+" : "+parle);
@@ -37,4 +41,12 @@ public abstract class Animal
     public void se_fait_kidnapper(){
         this.est_kidnappe = true;
     }
+    abstract void crier();
+    
+    public void est_il_kidnapper(Animal ton_animal){
+        if (this.est_kidnappe==true){
+            System.out.println("Ton animal est kidnappé");
+    }
+    }
+    
 }
