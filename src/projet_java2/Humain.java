@@ -32,7 +32,7 @@ public abstract class Humain
         System.out.println(nom+" : "+parle);
     }
     public void sepresenter(){
-        parler("Salut à tous, je m'appelle " + nom +", je suis "+metier+".");
+        parler("Salut, je m'appelle " + nom +", je suis "+metier+".");
     }
     public void jesuisal(){
         parler("Je suis à "+ lieu + ".");
