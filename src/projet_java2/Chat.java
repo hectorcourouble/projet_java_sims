@@ -22,8 +22,8 @@ public class Chat extends Animal
     System.out.println("De quelle couleur est ton chat ? ");
     Scanner scan_couleur_animal= new Scanner(System.in);
     String couleur_animal= scan_couleur_animal.nextLine();
-    this.nom=nom_animal;
-    this.couleur=couleur_animal;
+    set_nom(nom_animal);
+    set_couleur(couleur_animal);
               
     }
     

@@ -10,11 +10,11 @@ import java.util.Scanner;
  */
 public abstract class Animal
 {
-    public String nom;
-    public String couleur;
-    public String lieu;
-    public boolean est_kidnappe=false;
-    public boolean est_malade=false;
+    private String nom;
+    private String couleur;
+    private String lieu;
+    private boolean est_kidnappe=false;
+    private boolean est_malade=false;
     
     public Animal(String nom, String couleur,String lieu){
         this.nom=nom;
@@ -31,6 +31,18 @@ public abstract class Animal
         this.lieu=nouveau_lieu;
         System.out.println("Vous allez en balade vers "+nouveau_lieu);
     }
+    
+    public void set_nom(String nom){
+        this.nom=nom;
+    }
+    
+    public void set_couleur(String couleur){
+        this.couleur=couleur;
+    }
+    public void set_lieu(String lieu){
+        this.lieu=lieu;
+    }
+    
      public void parler(String parle){
         System.out.println(nom+" : "+parle);
     }

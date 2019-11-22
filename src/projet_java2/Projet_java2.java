@@ -5,6 +5,8 @@
  */
 package projet_java2;
 import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
 
 /**
  *
@@ -17,82 +19,8 @@ public class Projet_java2 {
      */
     public static void main(String[] args) {
         
-        System.out.println("Bienvenue sur Les sims. Nous sommes dans Smallville, une belle ville mais elle abrite beaucoup de truants. Très attachés à leurs animaux, les sims sont de belles personnes qui veulent combattre la méchanceté et vivre en paix avec leurs boules de poils! A vous de jouer !\nVeuillez choisir le nom de votre personnage : ");
-        Scanner scan_nom_hero = new Scanner(System.in);
-        String nom_hero =scan_nom_hero.nextLine();
-        System.out.println("Quel est votre metier ?");
-        Scanner scan_metier_hero = new Scanner(System.in);
-        String metier_hero =scan_metier_hero.nextLine();
-        //System.out.println("Quelle est votre position ?");
-        //Scanner scan_position_hero= new Scanner(System.in);
-        //String position_hero=scan_position_hero.nextLine();
-        Sims hero = new Sims(nom_hero,"maison",metier_hero);
-        System.out.println("Maintenant, vous allez pouvoir choisir quel est votre animal de compagnie.\nVoulez-vous un Chat ou un Chien?");
-        
-        String type_animal="";
-        Animal ton_animal = null;
-        while (type_animal.equals("")){
-        //System.out.println("votre saisie n'est pas bonne veuillez choisir un chat ou un chien");
-        Scanner scan_type_animal= new Scanner(System.in);   
-        type_animal= scan_type_animal.nextLine();
-        type_animal=type_animal.toUpperCase();
-        //}
-        switch(type_animal){
-            case "CHAT":
-            Chat ton_chat=new Chat("","","la maison");
-            ton_chat.crier();
-            ton_animal=(Chat)ton_chat;
-            break;
 
-            case "CHIEN":
-            Chien ton_chien=new Chien("","","la maison");
-            ton_chien.crier();
-            ton_animal=(Chien)ton_chien;
-            break;
-            
-            default:
-            type_animal="";  
-            System.out.println("votre saisie n'est pas bonne veuillez choisir un chat ou un chien");
-            break;
-            }
-        }
-        
-        System.out.println("Une nouvelle journée se lève ! vous allez promener votre animal de compagnie !\nOu voulez vous le promener ? Dans la rue (1) ou au parc (2) ?");
-        int lieu_balade=0;
-        String lieu_kidnapping="";
-        while(lieu_balade==0){
-        try{
-            Scanner scan_lieu_balade=new Scanner(System.in);
-            lieu_balade=scan_lieu_balade.nextInt();
-            
-        }
-        catch(Exception e){System.out.println("vous n'avez pas saisie un chiffre, veulliez faire une nouvelle saisie");
-        }
-        switch(lieu_balade){
-            case 1:
-            ton_animal.sedeplacer("rue");
-            hero.sedeplacer("rue");
-            lieu_kidnapping="rue";
-            break;
-        
-            case 2:            
-            ton_animal.sedeplacer("parc");
-            hero.sedeplacer("parc");
-            lieu_kidnapping="parc";
-            break;
-        
-            default:
-            System.out.println("veuillez choisir entre 1 et 2 s'il vous plait ");
-            lieu_balade=0;
-            break;
-            }
-        }
-        System.out.println("Pendant votre balade vous vous rendez compte que votre animal ne se sent pas bien !");
-        System.out.println("Vous rencontrez Arthur qui semble vouloir vous aidez à transporter votre animal chez le veterinaire !");
-        Voleur voleur = new Voleur("Arthur",lieu_kidnapping,"plombier");
-        System.out.println("Cependant sur le trajet vers le veterinaire vous avez un moment d'inattention il s'empare de votre animal ! ");
-        voleur.kidnapper_animal(ton_animal);
-        ton_animal.est_il_kidnapper(ton_animal);
-    }
-    
+        Histoire.commencer_histoire();
+       
+}
 }

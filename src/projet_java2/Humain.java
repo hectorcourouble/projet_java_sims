@@ -8,9 +8,9 @@ package projet_java2;
 public abstract class Humain
 {
     // variable d'instance - remplacez cet exemple par le vôtre
-    public String nom;
-    public String lieu;
-    public String metier;
+    private String nom;
+    private String lieu;
+    private String metier;
     
     public Humain(String nom, String lieu, String metier){
         this.nom = nom;

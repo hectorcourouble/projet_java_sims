@@ -9,10 +9,11 @@ public class Bimbo extends Rencontres implements Mechant
 {
     public boolean animalvole = false;
     public boolean estenprison = false;
-    public Bimbo(){
-    
-       
+    public Bimbo(String nom,String lieu,String metier)
+    {
+    super(nom,lieu,metier);       
     }
+    
      public void kidnapper_animal(Animal ton_animal){
         System.out.println("la bimbo a kidnappe votre chien");
         ton_animal.se_fait_kidnapper();

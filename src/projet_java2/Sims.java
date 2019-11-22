@@ -13,10 +13,4 @@ public class Sims extends Humain implements Gentille
     super(nom,lieu,metier);
     
     }
-    
-  /* 
-    public void promener(Animal){
-    }
-    public void demander(){
-    }*/
 }

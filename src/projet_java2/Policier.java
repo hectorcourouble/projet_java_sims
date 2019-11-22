@@ -1,4 +1,4 @@
-
+package projet_java2;
 /**
  * Décrivez votre classe policier ici.
  *

@@ -1,4 +1,4 @@
-
+package projet_java2;
 /**
  * Décrivez votre classe Femme ici.
  *
@@ -7,27 +7,11 @@
  */
 public class Femme extends Rencontres implements Gentille
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
-
-    /**
-     * Constructeur d'objets de classe Femme
-     */
-    public Femme()
+   
+    public Femme(String nom,String lieu,String metier)
     {
-        // initialisation des variables d'instance
-        x = 0;
+    super(nom,lieu,metier);
+    
     }
-
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
-    }
+   
 }
