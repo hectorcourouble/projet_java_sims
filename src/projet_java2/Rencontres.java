@@ -11,9 +11,14 @@ public class Rencontres extends Humain
     public Rencontres(String nom,String lieu,String metier)
     {
     super(nom,lieu,metier);
-    sepresenter();
-    jesuisal();
-    Monmetierest();
+    }
+    
+    public void set_look(String look){
+    this.look=look;
+    }
+    
+    public void get_look(){
+        System.out.println(this.quelesttonNom()+" ressemble a une "+this.look);
     }
 
     

@@ -13,5 +13,11 @@ public class Femme extends Rencontres implements Gentille
     super(nom,lieu,metier);
     
     }
-   
+    public void carresser_animal(Animal ton_animal){
+    System.out.println(this.quelesttonNom()+" carresse ton animal");
+    ton_animal.crier();
+    
+    };
+    
+
 }

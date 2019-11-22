@@ -16,10 +16,10 @@ import java.io.IOException;
  * @author hecto
  */
 public class Histoire {
-    File f = new File("test.txt");
     
     
-public void ecrire(String text)throws IOException{
+    
+public static void ecrire(String text)throws IOException{
         
         System.out.println(text);
         FileWriter out = null;
@@ -27,17 +27,17 @@ public void ecrire(String text)throws IOException{
         try{out = new FileWriter("test.txt");
         
         out.write(text);
-        
+        out.close();
         }
         catch(Exception e){System.out.println("erreur");
-        }
-        finnaly {
-            if(out != null)out.close();
+        out.close();
         }
 }
 
-public static void commencer_histoire(){ 
-        System.out.println("Bienvenue sur Les sims. Nous sommes dans Smallville, une belle ville mais elle abrite beaucoup de truants. Très attachés à leurs animaux, les sims sont de belles personnes qui veulent combattre la méchanceté et vivre en paix avec leurs boules de poils! A vous de jouer !\nVeuillez choisir le nom de votre personnage : ");
+public static void commencer_histoire()throws IOException{ 
+        File f = new File("test.txt");
+        
+        ecrire("Bienvenue sur Les sims. Nous sommes dans Smallville, une belle ville mais elle abrite beaucoup de truants. Très attachés à leurs animaux, les sims sont de belles personnes qui veulent combattre la méchanceté et vivre en paix avec leurs boules de poils! A vous de jouer !\nVeuillez choisir le nom de votre personnage : ");
         Scanner scan_nom_hero = new Scanner(System.in);
         String nom_hero =scan_nom_hero.nextLine();
         System.out.println("Quel est votre metier ?");
@@ -57,14 +57,15 @@ public static void commencer_histoire(){
         switch(type_animal){
             case "CHAT":
             Chat ton_chat=new Chat("","","la maison");
-            ton_chat.crier();
             ton_animal=(Chat)ton_chat;
+            hero.carresser_animal(ton_animal);
+
             break;
 
             case "CHIEN":
             Chien ton_chien=new Chien("","","la maison");
-            ton_chien.crier();
             ton_animal=(Chien)ton_chien;
+            hero.carresser_animal(ton_animal);
             break;
             
             default:
@@ -123,8 +124,14 @@ public static void commencer_histoire(){
         
         if (r==0){
             Femme maria = new Femme("Maria",lieu_kidnapping,"institutrice");
-            System.out.println("Maria vous propose de vous aider à retrouver votre animal de compagnie, voulez vous accepter ? oui (1) non (2)");
-        try{
+            System.out.println("Décrivez la femme de vos reves : ");
+            Scanner scan_look_maria = new Scanner(System.in);
+            String look_maria = scan_look_maria.nextLine();
+            maria.set_look(look_maria);
+            maria.get_look(); 
+            System.out.println("Maria vous propose de vous aider a retrouver votre animal de compagnie, voulez vous accepter ? oui (1) non (2)");
+           
+            try{
             Scanner scan_aide=new Scanner(System.in);
             aide=scan_aide.nextInt();
             switch(aide){
@@ -139,14 +146,34 @@ public static void commencer_histoire(){
                 default:
                     aide=0;
                     break;
-            }
-            
+            }    
         }
         catch(Exception e){System.out.println("vous n'avez pas saisie un chiffre, veulliez faire une nouvelle saisie");
         }
         }
         if (r==1){
             Bimbo jessica = new Bimbo("Jessica",lieu_kidnapping,"influenceuse instagramme");
+            System.out.println("Jessica vous propose de vous aider a retrouver votre animal pour 100€, voulez vous accepter ? oui (1) non (2)");
+        try{
+            Scanner scan_aide=new Scanner(System.in);
+            aide=scan_aide.nextInt();
+            switch(aide){
+            
+                case 1:
+                    System.out.println("Vous avez accepter l'aide de Jessica, elle vous donne un numero de telephone et part de son cote chercher votre animal.");
+                    break;
+                    
+                case 2:
+                    System.out.println("Vous n'avez pas accepter l'aide de Jessica, vouss avez bien fait ! il s'agissait d'une bimbo !");
+                    break;
+                
+                default:
+                    aide=0;
+                    break;
+            }    
+        }
+        catch(Exception e){System.out.println("vous n'avez pas saisie un chiffre, veulliez faire une nouvelle saisie");
+        }
         }
     }
 }

@@ -1,4 +1,4 @@
-
+package projet_java2;
 /**
  * Décrivez votre interface Gentille ici.
  *
@@ -8,6 +8,5 @@
 
 public interface Gentille
 {
-//public void sefaireemprisonner(){
-//}
+    public void carresser_animal(Animal ton_animal);
 }

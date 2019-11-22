@@ -7,6 +7,7 @@ package projet_java2;
 import java.util.*;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Projet_java2 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         
 
         Histoire.commencer_histoire();

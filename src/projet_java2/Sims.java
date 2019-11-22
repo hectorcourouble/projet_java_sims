@@ -13,4 +13,9 @@ public class Sims extends Humain implements Gentille
     super(nom,lieu,metier);
     
     }
+    public void carresser_animal(Animal ton_animal){
+    System.out.println("tu carresses ton animal");
+    ton_animal.crier();
+    
+    };
 }
